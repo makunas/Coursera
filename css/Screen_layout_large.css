@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+/* layout (global rules for all styles) */
+
+body {margin: 0; padding:0;}
+
+header .logo {
+	display: block;
+	position:absolute; /*gives ability to position logo inside of page container, which has position set to relative */
+	background-position: 0px 0px;
+	backgound-repeat: no-repeat;
+}
+
+nav {
+width:100%; /* takes 100% of space available in page container*/
+display:block;
+position: absolute;
+background-color:#a6430a;
+}
+
+/* layout large screens (default for older browsers) */
+
+header {
+	height: 275px;
+	background: url(../images/banner_large.jpg) no-repeat right 0px; /* right ir 0px - x ir y asys*/
+	
+}
+
+header a.logo {
+	width:150px;
+	height:85px;
+	top:28px;
+	right:30px; /* jei nebutu top ir right - sie paramentrai butu absolute (nes virsuj jie nustatyti i absolute), o sie parametrai atitraukia logo nuo virsaus ir desines*/
+	background-image: url(../images/logo_large.png);
+}
+
+article {padding:60px 20px 10px 20px;}
+
+.promo_container {padding: 0px 0px 15px 20px;}
+.promo_container .promo {
+	width:33%; /*tikriausiai tai 33% nuo page dydzio ir del to promo is eiluciu tama komonomis ir horizontaliai atsiranda 3 kolonos*/
+	float:left; /* det to visi promo bus vienoje eiluteje, seks vienas po kito */
+	background-position: 0px 3px; /* x ir y */ /* fonas siuo atveju yra tie mazi paveiksliukai*/
+}
+
+.promo_container .promo .content {padding:0px 30px 0px 70px;} /* del 70px is kaires tekstas nepersidengs su promo logo */
+
+nav {top:275px;}
+nav a {margin:12px 0px 10px 20px;}
+
+@media screen and (max-width:990px){
+	footer {padding-left:20px;}
+} /* @ taisykle, kuri bus taikoma, kai screen resolution bus mazesne nei 990px*/
